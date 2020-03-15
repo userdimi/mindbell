@@ -75,3 +75,4 @@ lint/tmp/
 # lint/reports/
 app/libs/
 build/
+/.idea/
