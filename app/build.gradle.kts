@@ -26,10 +26,16 @@ android {
 
 dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.core:core-ktx:1.2.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    val appCompatVersion = "1.1.0"
+    implementation("androidx.appcompat:appcompat:$appCompatVersion")
+    val androidCoreVersion = "1.2.0"
+    implementation("androidx.core:core-ktx:$androidCoreVersion")
+    val constraintLayoutVersion = "1.1.3"
+    implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
+    val jUnitVersion = "4.12"
+    testImplementation("junit:junit:$jUnitVersion")
+    val androidJUnitVersion = "1.1.1"
+    androidTestImplementation("androidx.test.ext:junit:$androidJUnitVersion")
+    val espressoVersion = "3.2.0"
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
 }
