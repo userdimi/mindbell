@@ -7,8 +7,9 @@ import de.pottcode.mindbell.di.DaggerAppComponent
 /**
  * (c) Dimitri Simon on 2020-03-16
  */
+
 open class MindBellApplication : Application() {
-    val appComponent: AppComponent by lazy {
+    open val appComponent: AppComponent by lazy {
         DaggerAppComponent.factory().create(applicationContext)
     }
 }

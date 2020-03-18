@@ -3,15 +3,17 @@ package de.pottcode.mindbell.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
-import de.pottcode.mindbell.schedule.ScheduleBellFragment
+import de.pottcode.mindbell.player.MindBellPlayerFragment
+import javax.inject.Singleton
 
 /**
  * (c) Dimitri Simon on 2020-03-16
  */
-@Component
+@Singleton
+@Component(modules = [MediaPlayerModule::class])
 interface AppComponent {
 
-    fun inject(scheduleBellFragment: ScheduleBellFragment)
+    fun inject(mindBellPlayerFragment: MindBellPlayerFragment)
 
     // Factory to create instances of the AppComponent
     @Component.Factory

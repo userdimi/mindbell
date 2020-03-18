@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mind Bell</string>
+    <string name="button_play">Play</string>
 </resources>

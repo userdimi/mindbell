@@ -23,6 +23,14 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
+
+    dataBinding {
+        isEnabled = true
+    }
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -50,8 +58,12 @@ dependencies {
     implementation("com.google.android.material:material:$materialComponentsVersion")
     val jUnitVersion = "4.12"
     testImplementation("junit:junit:$jUnitVersion")
+    val mockkVersion = "1.9.2"
+    testImplementation("io.mockk:mockk:$mockkVersion")
     val androidJUnitVersion = "1.1.1"
     androidTestImplementation("androidx.test.ext:junit:$androidJUnitVersion")
+    val testFragmentVersion = "1.2.2"
+    debugImplementation("androidx.fragment:fragment-testing:$testFragmentVersion")
     val espressoVersion = "3.2.0"
     androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
 }
