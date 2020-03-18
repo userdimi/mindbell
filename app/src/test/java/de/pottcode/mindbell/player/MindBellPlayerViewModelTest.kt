@@ -36,7 +36,6 @@ class MindBellPlayerViewModelTest {
         mindBellPlayerViewModel.playBell()
         // assert
         verify { mockMediaPlayer.setAudioAttributes(mockAudioAttributes) }
-        verify { mockMediaPlayer.prepare() }
         verify { mockMediaPlayer.start() }
     }
 }
