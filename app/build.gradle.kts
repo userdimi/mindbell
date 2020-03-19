@@ -47,11 +47,19 @@ dependencies {
     val navigationComponentsVersion = "2.3.0-alpha03"
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationComponentsVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navigationComponentsVersion")
-    val dagger2Version = "2.25.2"
+    val dagger2Version = "2.22.1"
     implementation("com.google.dagger:dagger:$dagger2Version")
     kapt("com.google.dagger:dagger-compiler:$dagger2Version")
+    implementation("com.google.dagger:dagger-android:$dagger2Version")
+    implementation("com.google.dagger:dagger-android-support:$dagger2Version")
+    annotationProcessor("com.google.dagger:dagger-android-processor:$dagger2Version")
+    val dagger2Assist = "0.5.2"
+    compileOnly("com.squareup.inject:assisted-inject-annotations-dagger2:$dagger2Assist")
+    kapt("com.squareup.inject:assisted-inject-processor-dagger2:$dagger2Assist")
     val workManagerVersion = "2.3.3"
+    implementation("androidx.work:work-runtime:$workManagerVersion")
     implementation("androidx.work:work-runtime-ktx:$workManagerVersion")
+    implementation("androidx.work:work-rxjava2:$workManagerVersion")
     val constraintLayoutVersion = "1.1.3"
     implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
     val materialComponentsVersion = "1.2.0-alpha05"
