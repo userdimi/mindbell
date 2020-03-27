@@ -1,16 +1,24 @@
 package de.pottcode.mindbell.schedule
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import de.pottcode.mindbell.MindBellApplication
 import de.pottcode.mindbell.R
+import javax.inject.Inject
 
 class ScheduleBellFragment : Fragment() {
 
-    private lateinit var viewModel: ScheduleViewModel
+    @Inject
+    lateinit var viewModel: ScheduleViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as MindBellApplication).appComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,11 +26,6 @@ class ScheduleBellFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.schedule_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ScheduleViewModel::class.java)
     }
 
     companion object {

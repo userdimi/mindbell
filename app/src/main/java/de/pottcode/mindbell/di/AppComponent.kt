@@ -12,7 +12,13 @@ import javax.inject.Singleton
  * (c) Dimitri Simon on 2020-03-16
  */
 @Singleton
-@Component(modules = [MediaPlayerModule::class, AppAssistedInjectModule::class, WorkerBindingModule::class])
+@Component(
+    modules = [MediaPlayerModule::class,
+        AppAssistedInjectModule::class,
+        WorkerBindingModule::class,
+        WorkManagerModule::class
+    ]
+)
 interface AppComponent {
 
     fun appWorkerFactory(): AppWorkerFactory
