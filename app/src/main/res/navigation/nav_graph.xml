@@ -16,5 +16,5 @@
         android:id="@+id/scheduleFragment"
         android:name="de.pottcode.mindbell.schedule.ScheduleBellFragment"
         android:label="schedule_fragment"
-        tools:layout="@layout/schedule_fragment" />
+        tools:layout="@layout/schedule_bell_fragment" />
 </navigation>
