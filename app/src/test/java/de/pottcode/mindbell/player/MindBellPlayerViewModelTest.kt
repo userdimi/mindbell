@@ -1,7 +1,5 @@
 package de.pottcode.mindbell.player
 
-import android.media.AudioAttributes
-import android.media.MediaPlayer
 import io.mockk.MockKAnnotations
 import io.mockk.impl.annotations.MockK
 import io.mockk.verify
@@ -16,18 +14,12 @@ class MindBellPlayerViewModelTest {
     private lateinit var mindBellPlayerViewModel: MindBellPlayerViewModel
 
     @MockK
-    private lateinit var mockMediaPlayer: MediaPlayer
-
-    @MockK
-    private lateinit var mockAudioAttributes: AudioAttributes
+    private lateinit var mockMindBellPlayer: MindBellPlayer
 
     @Before
     fun setUp() {
         MockKAnnotations.init(this, relaxed = true)
-        mindBellPlayerViewModel = MindBellPlayerViewModel(
-            mockMediaPlayer,
-            mockAudioAttributes
-        )
+        mindBellPlayerViewModel = MindBellPlayerViewModel(mockMindBellPlayer)
     }
 
     @Test
@@ -35,7 +27,6 @@ class MindBellPlayerViewModelTest {
         // act
         mindBellPlayerViewModel.playBell()
         // assert
-        verify { mockMediaPlayer.setAudioAttributes(mockAudioAttributes) }
-        verify { mockMediaPlayer.start() }
+        verify { mockMindBellPlayer.playBellSound() }
     }
 }
