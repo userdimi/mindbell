@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mindBellPlayerFragment">
+    app:startDestination="@id/scheduleFragment">
     <fragment
         android:id="@+id/mindBellPlayerFragment"
-        android:name="de.pottcode.mindbell.player.MindBellPlayerFragment"
+        android:name="de.pottcode.mindbell.meditation.MeditationBellFragment"
         android:label="MindBellPlayerFragment">
         <action
             android:id="@+id/action_mindBellPlayerFragment_to_scheduleFragment"
@@ -14,7 +14,15 @@
     </fragment>
     <fragment
         android:id="@+id/scheduleFragment"
-        android:name="de.pottcode.mindbell.schedule.ScheduleBellFragment"
+        android:name="de.pottcode.mindbell.schedule.view.ScheduleBellFragment"
         android:label="schedule_fragment"
-        tools:layout="@layout/schedule_bell_fragment" />
+        tools:layout="@layout/schedule_bell_fragment">
+        <action
+            android:id="@+id/action_scheduleFragment_to_MindBellTimePickerDialog"
+            app:destination="@+id/mindBellTimePickerDialog" />
+
+    </fragment>
+    <dialog
+        android:id="@+id/mindBellTimePickerDialog"
+        android:name="de.pottcode.mindbell.schedule.view.MindBellTimePickerDialog" />
 </navigation>

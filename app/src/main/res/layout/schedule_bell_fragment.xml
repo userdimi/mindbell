@@ -4,27 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
-            name="viewModel"
-            type="de.pottcode.mindbell.schedule.ScheduleViewModel" />
+            name="fragment"
+            type="de.pottcode.mindbell.schedule.view.ScheduleBellFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".schedule.ScheduleBellFragment">
+        tools:context=".schedule.view.ScheduleBellFragment">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_input_edit_text_schedule_time_start"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Schedule Bell"
-            android:onClick="@{() -> viewModel.scheduleBell()}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Play Bell from"
             app:layout_constraintStart_toStartOf="parent"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:onClick="@{() -> fragment.showTimePickerDialog()}"
             app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
