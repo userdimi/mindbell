@@ -2,6 +2,7 @@ package de.pottcode.mindbell.meditation
 
 import android.app.AlarmManager
 import android.app.PendingIntent
+import de.pottcode.mindbell.meditation.MeditationBellViewModel.Companion.BELL_INTERVAL_IN_MILLISECONDS
 import io.mockk.MockKAnnotations
 import io.mockk.impl.annotations.MockK
 import io.mockk.verify
@@ -40,7 +41,7 @@ class MeditationBellViewModelTest {
             mockMindBellAlarmManager.setRepeating(
                 AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 any(),
-                1000L * 60L,
+                BELL_INTERVAL_IN_MILLISECONDS,
                 mockPendingAlarmIntent
             )
         }

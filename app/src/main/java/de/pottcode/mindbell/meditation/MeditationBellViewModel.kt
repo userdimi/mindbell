@@ -12,7 +12,7 @@ class MeditationBellViewModel @Inject constructor(
 ) : ViewModel() {
 
     companion object {
-        private const val bellIntervalInMilliSeconds = 3000L * 1000
+         const val BELL_INTERVAL_IN_MILLISECONDS = 3000L * 1000
     }
 
     fun startMeditation() {
@@ -20,10 +20,9 @@ class MeditationBellViewModel @Inject constructor(
             setRepeating(
                 AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 SystemClock.elapsedRealtime(),
-                bellIntervalInMilliSeconds,
+                BELL_INTERVAL_IN_MILLISECONDS,
                 alarmPendingIntent
             )
         }
     }
 }
-
