@@ -12,6 +12,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath("com.android.tools.build:gradle:4.0.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("com.bugsnag:bugsnag-android-gradle-plugin:4.7.5")
     }
 }
 
