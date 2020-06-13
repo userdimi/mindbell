@@ -10,6 +10,7 @@ android {
     defaultConfig {
         applicationId = "de.pottcode.mindbell"
         minSdkVersion(21)
+
         targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
@@ -68,6 +69,8 @@ dependencies {
     implementation("com.google.android.material:material:$materialComponentsVersion")
     val timberVersion = "4.7.1"
     implementation("com.jakewharton.timber:timber:$timberVersion")
+    val bugsnagVersion = "5.0.0"
+    implementation("com.bugsnag:bugsnag-android:$bugsnagVersion")
     val jUnitVersion = "4.13"
     testImplementation("junit:junit:$jUnitVersion")
     val mockkVersion = "1.10.0"

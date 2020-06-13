@@ -6,10 +6,18 @@
     <application
         android:name=".MindBellApplication"
         android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--Bugsnag API Key -->
+        <meta-data
+            android:name="com.bugsnag.android.API_KEY"
+            android:value="63cf6346d52f545ecf968ccc4b3572ea" />
+
+        <!-- Activities -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

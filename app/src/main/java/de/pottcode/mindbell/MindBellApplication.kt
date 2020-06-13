@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.work.Configuration
 import androidx.work.WorkManager
 import androidx.work.WorkerFactory
+import com.bugsnag.android.Bugsnag
 import de.pottcode.mindbell.di.AppComponent
 import de.pottcode.mindbell.di.DaggerAppComponent
 import de.pottcode.mindbell.schedule.worker.AppWorkerFactory
@@ -20,6 +21,7 @@ open class MindBellApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        Bugsnag.start(this)
         WorkManager.initialize(this, Configuration.Builder().setWorkerFactory(factory).build())
     }
 
